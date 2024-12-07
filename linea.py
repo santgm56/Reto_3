@@ -176,6 +176,11 @@ punto_2 = Point(4, -2)
 linea = Line(punto_1, punto_2)
 linea_2 = Line(punto_1, punto_2, 5)
 
+print("Coordenadas de los puntos:")
+
+print(f"P1: ({punto_1.x}, {punto_1.y})")
+print(f"P2: ({punto_2.x}, {punto_2.y})")
+
 length = linea.compute_length()
 print(f"La longitud de la línea es: {length}")
 

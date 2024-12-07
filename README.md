@@ -21,6 +21,7 @@
 Optional: Define a method called discretize_line() that creates an array on n equally spaced points in the line and assigned as a instance attribute.
 
 ## Clase Línea
+
 ```mermaid
 classDiagram
     class Line {
@@ -34,11 +35,11 @@ classDiagram
       +compute_horizontal_cross()
       +compute_vertical_cross()
     }
-``` 
+```
 
 </details>
 
-----------------------------------------------------------------
+---
 
 ## Explicación del Código - Clase Line
 
@@ -50,8 +51,8 @@ Constructor `__init__`:
 ```
 def __init__(self, start, end, n: int = 2):
         if not isinstance(start, Point) or not isinstance(end, Point):
-            raise ValueError("Los puntos deben ser instancias de la clase Point") 
-            
+            raise ValueError("Los puntos deben ser instancias de la clase Point")
+
         self.start = start
         self.end = end
         super().__init__(start.x, start.y)
@@ -59,6 +60,7 @@ def __init__(self, start, end, n: int = 2):
         self.slope = self.compute_slope()
         self.discretize_points = self.discretize_line(n)
 ```
+
 ### Parámetros:
 
 - `start`: Punto de inicio de la línea (debe ser una instancia de Point).
@@ -99,9 +101,37 @@ La clase Line tiene varios métodos que no se muestran en el fragmento proporcio
 
 Estos métodos permiten realizar varias operaciones geométricas con la línea, como calcular su longitud, pendiente y puntos de intersección con los ejes.
 
-------
+## Pruebas
 
-``` mermaid
+**Geogebra:**
+
+### Línea
+
+![Recta](/imgs/1.png)
+
+Estas son sus cordenadas:
+
+![Coordenadas](/imgs/2.png)
+
+Esta es la longiud de la línea:
+
+![Longitud de la línea](/imgs/3.png)
+
+Esta es la pendiente de la línea en grados:
+
+![Pendiente de la línea](/imgs/4.png)
+
+La línea intersecciona en el eje X, pero no intersecciona en el eje Y:
+
+![Intersección en X](/imgs/5.png)
+
+Ejecución del programa:
+
+![Intersección en X](/imgs/6.png)
+
+---
+
+```mermaid
 classDiagram
     class Point {
         +float x
@@ -143,8 +173,7 @@ classDiagram
     Point --> Line: "usa"
 ```
 
-
-----------------
+---
 
 ### Ejercicio 2:
 
@@ -159,9 +188,10 @@ classDiagram
 - Define an Order class: This class should have a list of MenuItem objects and methods to add items, calculate the total bill amount, and potentially apply specific discounts based on the order composition.
 
 Create a class diagram with all classes and their relationships. The menu should have at least 10 items. The code should follow PEP8 rules.
+
 </details>
 
-------
+---
 
 ### Relación MenuItem - Types of MenuItems
 
@@ -169,11 +199,11 @@ Relación de Herencia `(<|--)`
 
 La clase MenuItem actúa como una clase base, de la cual heredan las clases:
 
-- `Beverages` 
+- `Beverages`
 
-- `Appetizers` 
+- `Appetizers`
 
-- `SideDishes` 
+- `SideDishes`
 
 - `MainCourses`
 
@@ -181,7 +211,7 @@ La clase MenuItem actúa como una clase base, de la cual heredan las clases:
 
 Esto implica que todas estas subclases tendrán los atributos y métodos definidos en MenuItem.
 
-``` mermaid
+```mermaid
 classDiagram
     MenuItem <|-- Beverages
     MenuItem <|-- Appetizers
@@ -235,7 +265,7 @@ classDiagram
     MenuItem --* Order: contains
 ```
 
-------
+---
 
 ### Diagrama Completo
 
